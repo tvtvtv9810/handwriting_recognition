@@ -1,0 +1,25 @@
+#noteArea {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+}
+#note {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+canvas {
+  border: thin solid #000000;
+}
+#status {
+  color: #009900;
+}
+#result {
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 100px;
+  font-size: 20px;
+}
+
+

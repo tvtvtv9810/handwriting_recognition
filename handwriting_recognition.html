@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>手書き文字認識</title>
+    <script src="https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js"></script>
+    <script src="./handwriting_recognition.js"></script>
+    <link rel="stylesheet" href="./handwriting_recognition.css">
+  </head>
+
+  <body onload="init()">
+    <p>手書き文字認識</p>
+    <input type="button" value="クリア" onclick="clearCanvas()">
+    <hr>
+    <div id="noteArea">
+      <!-- ガイド用キャンパス -->
+      <canvas id="guide" width="400" height="400"></canvas>
+      <!-- 手書き用キャンパス -->
+      <canvas id="note" width="400" height="400"></canvas>
+    </div>
+    <div>
+      <input type="radio" name="type" value="eng_0" checked>数字
+      <input type="radio" name="type" value="eng_1" checked>アルファベット
+      <input type="radio" name="type" value="jpn_2" checked>ひらがな
+      <input type="radio" name="type" value="jpn_3" checked>カタカナ
+      <br>
+      <input type="button" value="認識" onclick="recognize()">
+      <progress id="progress" value="0" min="0" max="100"></progress>
+      <span id="status"></span>
+      <br>
+      <input type="text" id="result">
+      (<span id="score">--</span>%)
+    </div>
+  </body>
+</html>
